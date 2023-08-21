@@ -6,7 +6,7 @@
 /*   By: araiteb <araiteb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 04:48:32 by araiteb           #+#    #+#             */
-/*   Updated: 2023/08/21 05:38:57 by araiteb          ###   ########.fr       */
+/*   Updated: 2023/08/21 23:17:03 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ void    Harl::error()
 }
 void    Harl::complain(std::string level)
 {
+    complainFunction tab[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::cout<<" sel "<<level<< std::endl;
     std::string levels[4]={"DEBUG", "INFO", "WARNING", "ERROR"};
     int i = 0;
     while(i < 4 && levels[i].compare(level))
         i++;
-    std::cout<<levels[i]<<std::endl;
+    (this->*tab[i])();
 }
