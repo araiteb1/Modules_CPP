@@ -6,7 +6,7 @@
 /*   By: araiteb <araiteb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 03:12:45 by araiteb           #+#    #+#             */
-/*   Updated: 2023/08/23 06:31:25 by araiteb          ###   ########.fr       */
+/*   Updated: 2023/09/10 14:29:43 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ Fixed& Fixed::operator* (const Fixed& fixed)
   std::cout<<"Copy assignment operator called"<<std::endl;
   return(*this);
 }
-Fixed& Fixed::operator- (const Fixed& fixed)
+Fixed& Fixed::operator/ (const Fixed& fixed)
 {
   this->value = this->value / fixed.value;
   std::cout<<"Copy assignment operator called"<<std::endl;
@@ -82,4 +82,4 @@ Fixed& Fixed::operator- (const Fixed& fixed)
 std::ostream& operator<<(std::ostream &os, const Fixed& fixed)
 {
   os << fixed.toFloat() << std::endl;
-}
+}  
