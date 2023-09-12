@@ -6,13 +6,13 @@
 #    By: araiteb <araiteb@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/11 14:41:18 by araiteb           #+#    #+#              #
-#    Updated: 2023/09/11 14:47:38 by araiteb          ###   ########.fr        #
+#    Updated: 2023/09/12 13:13:26 by araiteb          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 EXEC = animal
-INCLUDE = Animal.hpp
-SRCS = main.cpp Animal.cpp
+INCLUDE = Animal.hpp Cat.hpp Dog.hpp
+SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp
 CC = c++ 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 OBJS = $(SRCS:.cpp=.o)

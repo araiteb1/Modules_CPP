@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: araiteb <araiteb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 12:48:22 by araiteb           #+#    #+#             */
-/*   Updated: 2023/09/12 12:48:45 by araiteb          ###   ########.fr       */
+/*   Created: 2023/09/12 13:13:55 by araiteb           #+#    #+#             */
+/*   Updated: 2023/09/12 13:14:10 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"Animal.hpp"
+#include"Dog.hpp"
 
-int main()
+Dog::Dog()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-...
-return 0;
+    this->type = "Dog";
+    std::cout<<"Default constructor of dog called"<<std::endl;
+}
+Dog::~Dog()
+{
+    std::cout<<"destructor of dog called"<<std::endl;
 }
