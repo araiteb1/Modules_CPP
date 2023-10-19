@@ -6,7 +6,7 @@
 /*   By: araiteb <araiteb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 03:12:45 by araiteb           #+#    #+#             */
-/*   Updated: 2023/08/23 02:05:11 by araiteb          ###   ########.fr       */
+/*   Updated: 2023/10/19 03:45:14 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,37 +19,45 @@ Fixed::Fixed(){
 Fixed::~Fixed(){
   std::cout << "Destructor called"<<std::endl;
 }
-Fixed::Fixed(Fixed &p){
-  std::cout << "Copy constructor called"<<std::endl;
+Fixed::Fixed(const Fixed &p){
   this->value = p.value;
+  std::cout << "Copy constructor called"<<std::endl;
 }
 Fixed::Fixed(const int a)
 {
-  this->value = a;
+  std::cout << "Int cestructor called" << std::endl;
+  this->value = a << this->a;
 }
 Fixed::Fixed(const float b)
 {
-  // this->value = this->toInt(b);  
+  std::cout << "Float cestructor called" << std::endl;
+  this->value = std::roundf(b * (1 << this->a));
+}
+float Fixed:: toFloat( void ) const
+{
+  return((float )(this->getRawBits()) / (1 << this->a));
+}
+int Fixed ::toInt( void ) const
+{
+  return (this->getRawBits() >> this->a);
 }
 int     Fixed::getRawBits( void ) const
 {
-  std::cout<<"getRawBits member function called"<<std::endl;
   return (this->value); 
 }
 void       Fixed::setRawBits(int const raw)
 {
-  
-  std::cout<<"setRawBits member function called"<<std::endl;
   this->value = raw;
 }
 
 Fixed& Fixed::operator= (const Fixed& fixed)
 {
   this->value = fixed.value;
-  std::cout<<"Copy assignment operator called"<<std::endl;
-  return(*this);
+  std::cout << "Copy assignment operator called " << std::endl;
+  return (*this);
 }
-std::ostream& operator<<(std::ostream &os, const Fixed& fixed)
+std::ostream& operator<< (std::ostream &os, const Fixed& fixed)
 {
-  os << fixed.toFloat() << std::endl;
+  os << fixed.toFloat();
+  return os;
 }
