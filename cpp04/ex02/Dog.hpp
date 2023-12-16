@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: araiteb <araiteb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 13:08:59 by araiteb           #+#    #+#             */
-/*   Updated: 2023/12/15 10:13:14 by araiteb          ###   ########.fr       */
+/*   Created: 2023/09/12 13:11:38 by araiteb           #+#    #+#             */
+/*   Updated: 2023/12/15 22:30:26 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+# ifndef DOG_HPP
+#define DOG_HPP
 
-#include "Animal.hpp"
+#include "brain.hpp"
 
-class   Cat: public Animal
+class   Dog: public Animal
 {
-    public:
-        Cat();
-        Cat(Cat &c);
-        Cat(std::string type);
-        Cat& operator=(const Cat &c);
-        ~Cat();
-
-        void makeSound() const ;
+	private :
+		Brain *b;
+	public:
+		Dog();
+		Dog(Dog &d);
+		Dog(std::string type);
+		Dog& operator= (const Dog &d);
+		~Dog();
+		void makeSound() const;
 };
 
 

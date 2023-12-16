@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: araiteb <araiteb@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 13:08:59 by araiteb           #+#    #+#             */
-/*   Updated: 2023/12/15 10:13:14 by araiteb          ###   ########.fr       */
+/*   Created: 2023/09/12 12:48:22 by araiteb           #+#    #+#             */
+/*   Updated: 2023/12/16 03:16:27 by araiteb          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
-
-#include "Animal.hpp"
-
-class   Cat: public Animal
+#include "Cat.hpp"
+#include "Dog.hpp"
+int main()
 {
-    public:
-        Cat();
-        Cat(Cat &c);
-        Cat(std::string type);
-        Cat& operator=(const Cat &c);
-        ~Cat();
+	const Animal *j1[100];
 
-        void makeSound() const ;
-};
-
-
-#endif
+	for (int i1 = 0; i1 < 2; i1++)
+	{
+		j1[i1] = new Cat();
+	}
+	for (int i1 = 0; i1 < 4; i1++)
+	{
+		j1[i1] = new Dog();
+	}
+	for (int i1 = 0; i1 < 4; i1++)
+	{
+		delete j1[i1];
+	}
+	return 0;
+}
